@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>播放音频</title>
+</head>
+<body>
+  <h2>音频播放中...</h2>
+  <audio id="player" controls autoplay>
+    您的浏览器不支持 audio 标签。
+  </audio>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const track = urlParams.get('track') || '001';
+    const audioPath = `audio/${track}.mp3`;
+    document.getElementById('player').src = audioPath;
+  </script>
+</body>
+</html>
